@@ -1,9 +1,6 @@
 <!--
- * @Author: your name
- * @Date: 2021-04-26 02:25:52
- * @LastEditTime: 2021-04-26 02:36:42
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @Author: ZITING Zhao
+ * @Date: 2021-04-26 
  * @FilePath: /COM3529Assignment/README.md
 -->
 # COM3529 Assignment 1
@@ -14,10 +11,32 @@ Name: Ziting Zhao
 
 E-mail: zzhao30@sheffield.ac.uk
 
-• A section overviewing the support your tool provides and what automation it delivers. This section should further include a detailed list of all of your tool’s different features and how they would assist a human tester perform logic testing in practice.
+The tool has mainly two part one is to check the test cases of the implemented example and one is to test the randomly generated value is to test 
 
-• A section detailing how to install and run your tool (or how to run the different parts of your tool, if different stages are required). This section should include a list of libraries or utilities your tool is dependent on, and how to get hold of them. (A simple way to handle this requirement is to limit yourself to packages that can be automatically obtained via Maven (https://maven. apache.org/) or Gradle (https://gradle.org/) and use one of those build automation tools.
+### Part1:
+   In this part we are implementing the Multiple condition coverage and Multiple condition decision coverage and actually we are calliung this method \
+#### Tool used:
+ Netbeans
+#### Method :
 
-###Example
+JUnit testing
+  
+#### Driver Function:
+       Driver function is responsible for the testing of different example that actually we want to to test
+Actually ,
+   when we trigeerd the function of the relative exam-le it will invoke the function and we have condition coverage result .
+
+Just open the whole project in the Netbeans or eclipse maven project section and runt he file named
+Testmain it show you a prompt for the user to select 1 or 2 which ever example he want just show the 
+and when user select it will show the result according to the requirement.
+ The result consisit of branches produce by randomy generated data and also the passed cover branches that actually want by the user.
+
+#### Part2:
+it just auto testing of the test cases of the function that actually to be tested.
+it just triggered the function and will give you result  either passed or failed according to 
+your logical implementation based upon expected output.
+you can run it just by clicking on run test button in your ide i.e. Netbeans and Eclipse.
+
+### Example
 
 BMI calculator

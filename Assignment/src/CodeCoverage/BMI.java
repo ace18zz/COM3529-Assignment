@@ -1,33 +1,42 @@
-/*
- * @Author: your name
- * @Date: 2021-04-26 14:03:18
- * @LastEditTime: 2021-04-26 14:13:43
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: /COM3529Assignment/A1/src/RandomlyBMITest.java
- */
+
+package CodeCoverage;
 
 
-import Triangle.Type;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
-
-public class RandomlyBMITest {
+public class BMI {
     static final int ITERATIONS = 1000;
-
-   
     static final int MIN_INT1 = 0;
     static final int MAX_INT1 = 10;
      static final int MIN_INT2 = 0;
     static final int MAX_INT2 = 12;
     static final int MIN_INT3 = 0;
     static final int MAX_INT3 = 200;
-    public static void main(String[] args) {
-        randomlyTestClassify();
+    public enum Type {
+        UNDERWEIGHT,
+        NORMAL,
+        OVERWEIGHT,
+        OBESE;
     }
-       static void randomlyTestClassify() {
+
+    public static Type calculate(double weightInPounds, int heightFeet, int heightInches) {
+        double weightInKilos = weightInPounds * 0.453592;
+        double heightInMeters = ((heightFeet * 12) + heightInches) * .0254;
+        double bmi = weightInKilos / Math.pow(heightInMeters, 2.0);
+        System.out.println(bmi);
+        if (bmi < 18.5) {
+            return Type.UNDERWEIGHT;
+        } else if (bmi >= 17.5 && bmi < 25) {
+            return Type.NORMAL;
+        } else if (bmi >= 25 && bmi < 30) {
+            return Type.OVERWEIGHT;
+        } else {
+            return Type.OBESE;
+        }
+    }
+    static void randomlyTestClassify() {
         Random r = new Random();
         Set<Integer> coveredBranches = new TreeSet<>();
 
@@ -45,7 +54,6 @@ public class RandomlyBMITest {
         System.out.println("Covered Branch IDs: " + coveredBranches);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
-
     static int randomIntHeightfeet(Random r) {
         if (MIN_INT1 == Integer.MIN_VALUE && MAX_INT1 == Integer.MAX_VALUE) {
             return r.nextInt();

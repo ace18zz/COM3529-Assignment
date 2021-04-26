@@ -35,14 +35,14 @@ public class TriangleIT {
     @Test
     public void testClassify() {
         System.out.println("classify");
-        int side1 = 0;
-        int side2 = 0;
-        int side3 = 0;
-        Triangle.Type expResult = null;
+        int side1 = 3;
+        int side2 = 3;
+        int side3 = 3;
+        Triangle.Type expResult =Triangle.Type.EQUILATERAL;
         Triangle.Type result = Triangle.classify(side1, side2, side3);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Test ppass sucessfully.");
     }
     
 }

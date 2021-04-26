@@ -1,22 +1,57 @@
 
-package codecoverage;
-import codecoverage.Triangle.Type;
+package CodeCoverage;
+
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
-
-public class RandomlyTreeTest {
-     static final int ITERATIONS = 10000;
-
-    // static final int MIN_INT = Integer.MIN_VALUE;
-    // static final int MAX_INT = Integer.MAX_VALUE;
-    static final int MIN_INT = -10;
+public class Triangle {
+    static final int ITERATIONS = 1000;
+    static final int MIN_INT = 0;
     static final int MAX_INT = 10;
-    public static void main(String[] args) {
-        randomlyTestClassify();
+     public enum Type {
+        INVALID,
+        SCALENE,
+        EQUILATERAL,
+        ISOSCELES;
     }
-       static void randomlyTestClassify() {
+
+    public static Type classify(int side1, int side2, int side3) {
+        Type type;
+
+        if (side1 > side2) {
+            int temp = side1;
+            side1 = side2;
+            side2 = temp;
+        }
+        if (side1 > side3) {
+            int temp = side1;
+            side1 = side3;
+            side3 = temp;
+        }
+        if (side2 > side3) {
+            int temp = side2;
+            side2 = side3;
+            side3 = temp;
+        }
+
+        if (side1 + side2 <= side3) {
+            type = Type.INVALID;
+        } else {
+            type = Type.SCALENE;
+            if (side1 == side2) {
+                if (side2 == side3) {
+                    type = Type.EQUILATERAL;
+                }
+            } else {
+                if (side2 == side3) {
+                    type = Type.ISOSCELES;
+                }
+            }
+        }
+        return type;
+    }
+    static void randomlyTestClassify() {
         Random r = new Random();
         Set<Integer> coveredBranches = new TreeSet<>();
 
@@ -24,7 +59,7 @@ public class RandomlyTreeTest {
             int side1 = randomInt(r);
             int side2 = randomInt(r);
             int side3 = randomInt(r);
-            System.out.println((i+1) + ": [" + side1 + ", " + side2 + ", " + side3 + "]");
+            System.out.println((i+1) + ": [" +"Side1:"+ side1 + ", " + "Side2:"+side2 + ", " +"Side3:" +side3 + "]");
             Type result = instrumentedClassify(side1, side2, side3, coveredBranches);
             System.out.println("-> " + result);
 
@@ -106,5 +141,4 @@ public class RandomlyTreeTest {
         }
         return type;
     }
-    }
-    
+}
