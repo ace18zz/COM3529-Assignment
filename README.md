@@ -14,7 +14,7 @@ E-mail: zzhao30@sheffield.ac.uk
 The tool has mainly two part one is to check the test cases of the implemented example and one is to test the randomly generated value is to test 
 
 ### Part1:
-   In this part we are implementing the Multiple condition coverage and Multiple condition decision coverage and actually we are calliung this method \
+   In this part we are implementing the Multiple condition coverage and Multiple condition decision coverage and actually we are calliung this method
 #### Tool used:
  Netbeans
 #### Method :

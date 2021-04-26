@@ -1,6 +1,12 @@
+/*
+ * @Author: Ziting zhao
+ * @Date: 2021-04-26 
+ * @Description: The main function of this tool
+ * @FilePath: /COM3529 Software Testing and Analysis/COM3529Assignment/Assignment/src/CodeCoverage/Test_Main.java
+ */
 
 
-
+package CodeCoverage;
 import java.util.Scanner;
 
 
