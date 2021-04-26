@@ -7,8 +7,7 @@
 package condition_coverage;
 import java.util.Scanner;
 public class Condition_Coverage {
-
-   
+ 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter how many iterations you want to test: ");

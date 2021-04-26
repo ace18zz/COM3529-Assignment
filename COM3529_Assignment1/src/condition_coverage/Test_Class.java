@@ -7,7 +7,7 @@
 package condition_coverage;
 
 public class Test_Class {
-    public static final String TEXT_GREEN = "\u001B[32m";
+    public static final String TEXT_PINK = "\u001B[35m";
     int myAbs(int x) {
     if (x > 0) { 
         return x;
@@ -34,7 +34,7 @@ public class Test_Class {
            
         double result =Body_Mass_Calc.BM_Calculator(x, y);
         assert(x / (x * y) == result);
-        System.out.println(TEXT_GREEN+"There is no Exception means passed"+" Value is: "+result);
+        System.out.println(TEXT_PINK+"There is no Exception means passed"+" Value is: "+result);
     }
       
     catch(Exception e) {

@@ -6,9 +6,8 @@
 
 package condition_coverage;
 
-
 public class Body_Mass_Calc {
-    
+    //set up the BMI calculator
       static double  BM_Calculator(double weight,double height){  
       double BMI = weight / (height * height);
       if(BMI<18.5)
