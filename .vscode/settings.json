@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "JavaApplication31/src/CodeCoverage",
+        "A1/src/CodeCoverage",
+        "A1/src"
+    ]
+}
